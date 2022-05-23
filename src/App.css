@@ -16,8 +16,9 @@ h1 {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  color: #ffffff;
+  color: black;
   text-align: center;
+
   /* margin-left: 40%; */
 }
 
@@ -34,11 +35,13 @@ h1 {
 .calender-container-child {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  background-color: white;
 }
 
 .month-header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  background-color: yellow;
 }
 
 .left-arrow,

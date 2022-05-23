@@ -8,14 +8,14 @@ import {
 import { getDays } from "../utils/calendarUtils";
 
 const startDay = monthDays(`${selectedMonth + 1}-01-${selectedYear}`);
-const endDay = daysInMonth(selectedMonth, selectedYear);
+const endDate = daysInMonth(selectedMonth, selectedYear);
 
 const initialState = {
   startDay,
-  endDay,
+  endDate,
   selectedMonth,
   selectedYear,
-  days: getDays(startDay, endDay),
+  days: getDays(startDay, endDate),
 };
 
 export const reducers = (state = initialState, action) => {
@@ -23,9 +23,9 @@ export const reducers = (state = initialState, action) => {
     case CHANGE_MONTH:
       const { selectedMonth, selectedYear } = action.payload;
       const startDay = monthDays(`${selectedMonth + 1}-01-${selectedYear}`);
-      const endDay = daysInMonth(selectedMonth, selectedYear);
-      const days = getDays(startDay, endDay);
-      return { ...state, selectedMonth, selectedYear, days };
+      const endDate = daysInMonth(selectedMonth, selectedYear);
+      const days = getDays(startDay, endDate);
+      return { ...state, selectedMonth, selectedYear, days, startDay, endDate };
     default:
       return state;
   }

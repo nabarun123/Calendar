@@ -41,7 +41,7 @@ function Calendar(props) {
   return (
     <div className="calender-container">
       <div className="calender-inner-container">
-        <h2>Calender</h2>
+        <h1 style={{ color: "white" }}>Calendar</h1>
         <div id="calender-display">
           <div className="month-header">
             <div className="left-arrow" onClick={() => changeMonth("LEFT")}>
@@ -55,17 +55,17 @@ function Calendar(props) {
             </div>
           </div>
           <div className="calender-container-child">
-            <div>Sunday</div>
-            <div>Monday</div>
-            <div>Tuesday</div>
-            <div>Wednesday</div>
-            <div>Thursday</div>
-            <div>Friday</div>
-            <div>Saturday</div>
+            <div>SUN</div>
+            <div>MON</div>
+            <div>TUE</div>
+            <div>WED</div>
+            <div>THU</div>
+            <div>FRI</div>
+            <div>SAT</div>
           </div>
           <div className="calender-container-child">
             {props.days.map((item, index) => (
-              <div key={item + index}>{item}</div>
+              <div key={index}>{item}</div>
             ))}
           </div>
         </div>
@@ -77,7 +77,7 @@ function Calendar(props) {
 const mapStatetoProps = (state) => {
   return {
     startDay: state.startDay,
-    endDay: state.endDay,
+    endDate: state.endDate,
     selectedMonth: state.selectedMonth,
     selectedYear: state.selectedYear,
     days: state.days,
@@ -86,3 +86,4 @@ const mapStatetoProps = (state) => {
 // (ui component -> state values)(all the reducer functions)
 
 export default connect(mapStatetoProps)(Calendar);
+// we can use useSelector also

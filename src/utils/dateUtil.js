@@ -13,5 +13,4 @@ export const monthDays = function (date) {
   return new Date(date).getDay();
 };
 
-// new Date(26-05-2022).getDay();
-// returns 4, means Thursday ie:(4th index)
+//new Date("5-01-2022").getDay() //0(Sunday)
